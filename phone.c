@@ -9,38 +9,27 @@
 - loadAndPrintFromFile(): загружает данные из файла и выводит на экран
 Тестирование:
 ввод:
-	Введите модель телефона: Samsung
-	Введите встроенную память (ГБ): 512
-	Введите оперативную память (ГБ): 16
-	Введите год выпуска: 2025
-	Введите цвет телефона: black
-	Введите цену: 123456,99
+Введите модель телефона: Samsung
+Введите встроенную память (ГБ): 512
+Введите оперативную память (ГБ): 16
+Введите год выпуска: 2025
+Введите цвет телефона: black
+Введите цену: 123456,99
 вывод:
-	Данные сохранены в файл 'phone.dat':
-	Модель: Samsung
-	Встроенная память (ГБ): 512
-	Оперативная память (ГБ): 16
-	Год выпуска: 2025
-	Цвет: black
-	Цена: 123456,99
+Данные сохранены в файл 'phone.dat':
+Модель: Samsung
+Встроенная память (ГБ): 512
+Оперативная память (ГБ): 16
+Год выпуска: 2025
+Цвет: black
+Цена: 123456,99
 Программа сохранит данные в phone.dat
 Выполнил Базан Игорь 303ИС-22
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "phone.h"
 #include <locale.h>
 #define MAX	256
-
-typedef struct {
-	char *model;
-	int internal_memory;
-	int ram;
-	int year;
-	char *color;
-	float price;
-} Phone;
 
 void inputPhone(Phone *phone) {
 	char buffer[MAX];
@@ -57,7 +46,7 @@ void inputPhone(Phone *phone) {
 	
 	printf("Введите год выпуска: ");
 	scanf("%d", &phone->year);
-
+	
 	printf("Введите цвет телефона: ");
 	scanf("%255s", buffer);
 	phone->color = malloc(strlen(buffer) + 1);

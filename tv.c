@@ -26,20 +26,9 @@
 Выполнил Базан Игорь 303ИС-22
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "tv.h"
 #include <locale.h>
-#define MAX 256
-
-typedef struct {
-	char *model;
-	float diagonal;
-	int resolution_w;
-	int resolution_h;
-	char *tech;
-	float price;
-} Television;
+#define MAX	256
 
 void inputTV(Television *tv) {
 	char buffer[MAX];
